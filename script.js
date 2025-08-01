@@ -28,7 +28,7 @@ function draw() {
   if (scene === 2) makePlot(titles[2], _ => true, true);
 }
 
-function makePlot(title, isHiLite, showTip = false) {
+function makePlot(title, isHighlight, showTip = false) {
 
   d3.select("#title").text(title);
 
@@ -74,7 +74,7 @@ function makePlot(title, isHiLite, showTip = false) {
       .attr("cx", d => x(d.hp))
       .attr("cy", d => y(d.mpg))
       .attr("r", 5)
-      .attr("fill", d => isHiLite(d) ? "#0080ff" : "#c0c0c0");
+      .attr("fill", d => isHighlight(d) ? "#0080ff" : "#c0c0c0");
 
   if (showTip) {
     dots.on("mouseover", (e, d) => {
@@ -87,7 +87,7 @@ function makePlot(title, isHiLite, showTip = false) {
         })
         .on("mouseout", (e, d) => {
           d3.select(e.currentTarget)
-            .attr("fill", isHiLite(d) ? "#0080ff" : "#c0c0c0");
+            .attr("fill", isHighlight(d) ? "#0080ff" : "#c0c0c0");
           svg.select("#tip").remove();
         });
   }
