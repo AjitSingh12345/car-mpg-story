@@ -1,0 +1,6 @@
+body      { font-family: Arial, sans-serif; text-align: center; background:#a2f638; color:#113; }
+#visual      { padding:20px 0; }
+button    { margin:12px 6px; padding:6px 14px; border:1px solid #007acc; background:#007acc; color:#fff; cursor:pointer; }
+button:hover { background:#0063a4; }
+svg       { margin-top:10px; background:#fff; }
+svg circle:hover { stroke:#222; stroke-width:1.2px; }
